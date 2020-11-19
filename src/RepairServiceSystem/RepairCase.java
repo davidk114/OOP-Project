@@ -19,6 +19,15 @@ public RepairCase(int CaseID, Customer customer, String faultDesc,
     setStatus(status);
 }
 
+public RepairCase(){
+    setCaseId(0);
+    setCustomer(customer);
+    setFaultDesc("n/a");
+    setSerialNo("n/a");
+    setDeviceBrand("n/a");
+    setStatus("L");
+}
+
     public void setCaseId(int caseId) {
         this.caseId = caseId;
     }
