@@ -4,7 +4,7 @@ public class Invoice {
 
     private int invNo;
     private Customer customer;
-    private float total;
+    private float total = 0;
     private Service services[];
 
     public Invoice(int invNo, Customer customer, float total, Service[] services){

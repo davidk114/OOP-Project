@@ -29,6 +29,23 @@ public class TestRepairCase {
         JOptionPane.showMessageDialog(null, "Repair Case" + r1.getCaseId() +
                 "\n\n" + r1.toString());
 
+        Service ramInstall = new Service("Ram Install", "Installs Ram", 30);
+        Service virusScan = new Service("Virus Scan", "Scan and remove viruses", 20);
+
+
+
+    }
+
+    public float getTotal(Service services[]){
+
+        float total=0;
+
+        for(int i=0;i< services.length;i++){
+            total = services[i].getPrice() + total;
+        }
+
+
+        return total;
     }
 
 }
