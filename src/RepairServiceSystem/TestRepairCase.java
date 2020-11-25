@@ -32,20 +32,13 @@ public class TestRepairCase {
         Service ramInstall = new Service("Ram Install", "Installs Ram", 30);
         Service virusScan = new Service("Virus Scan", "Scan and remove viruses", 20);
 
+        Service[] inv1 = new Service[2];
 
+        Invoice invoice1 = new Invoice(1,c1, 0, inv1);
+
+        JOptionPane.showMessageDialog(null, invoice1.toString(), "Invoice" + invoice1.getInvNo(), JOptionPane.INFORMATION_MESSAGE);
 
     }
 
-    public float getTotal(Service services[]){
-
-        float total=0;
-
-        for(int i=0;i< services.length;i++){
-            total = services[i].getPrice() + total;
-        }
-
-
-        return total;
-    }
 
 }

@@ -42,13 +42,27 @@ public class Invoice {
         return services;
     }
 
-    public float getTotal() {
+    public float getTotal(Service services[]){
+
+        float total=0;
+
+        for(int i=0;i< services.length;i++){
+            total = services[i].getPrice() + total;
+        }
+
+
         return total;
     }
 
     public String toString(){
+
+        String serviceList="";
+        for(int i=0;i<services.length;i++){
+            serviceList+= services.toString();
+        }
+
         return "Invoice No: " + getInvNo() + "\n" + getCustomer() +
-                "\nPurchases:\n=======" + getServices();
+                "\nPurchases:\n=======" + serviceList + "\t\t" + total;
     }
 
 }
