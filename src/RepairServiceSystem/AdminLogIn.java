@@ -5,12 +5,12 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
 
-public class LogIn {
+public class AdminLogIn {
 
     JTextField usernameField;
     JPasswordField passwordField;
 
-    public LogIn(){
+    public AdminLogIn(){
         JFrame jFrameWindow = new JFrame("Authentication");
 
         FlowLayout flowLayout = new FlowLayout();
@@ -64,15 +64,11 @@ public class LogIn {
 
                 String passwordText = new String(passwordCharacters);
 
-                if(usernameField.getText().equals("david") &&
-                        passwordText.equals("Password") || (usernameField.getText().equals("admin") &&
-                        passwordText.equals("adminPass"))) {
+                if(usernameField.getText().equals("admin") &&
+                        passwordText.equals("adminPass")) {
                     JOptionPane.showMessageDialog(null, "Welcome to the system " +
                                     usernameField.getText(), "Authenticated",
                             JOptionPane.INFORMATION_MESSAGE);
-
-                    RepairAgentMenu repMenu = new RepairAgentMenu();
-
                 }
                 else
                     JOptionPane.showMessageDialog(null,"Invalid username/password " +

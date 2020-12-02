@@ -2,7 +2,7 @@ package RepairServiceSystem;
 
 public class RepairCase {
 
-    private int caseId;
+    private int caseId = 0;
     private Customer customer;
     private String faultDesc;
     private String serialNo;
@@ -29,7 +29,7 @@ public RepairCase(){
 }
 
     public void setCaseId(int caseId) {
-        this.caseId = caseId;
+        caseId += caseId;
     }
 
     public void setCustomer(Customer customer) {

@@ -56,13 +56,16 @@ private JButton aButton;
                 if(e.getSource() == raButton){
 
 
+                   LogIn login = new LogIn();
+
+
                 }
                 else if(e.getSource() == cButton){
                 JOptionPane.showMessageDialog(null, "Customer", "c", JOptionPane.INFORMATION_MESSAGE);
 
 
                 }else if(e.getSource() == aButton){
-                   JOptionPane.showMessageDialog(null, "Admin", "A", JOptionPane.INFORMATION_MESSAGE);
+                    AdminLogIn adminLogIn = new AdminLogIn();
 
                 }
 
