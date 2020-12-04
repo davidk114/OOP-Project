@@ -9,22 +9,37 @@ import java.util.Arrays;
 import javax.swing.*;
 import javax.swing.event.*;
 
-public class RepairAgentMenu extends JPanel {
+public class RepairAgentMenu extends JPanel implements ActionListener {
     private JMenuBar topMenu;
    private ArrayList<RepairCase> allRepairCases = new ArrayList<RepairCase>();
     private ArrayList<Customer> allCustomers = new ArrayList<Customer>();
 
+    JMenuItem deleteRepairCase, createRepairCase, updateRepairCase, viewRepairCases;
+    JScrollPane scrollPane;
+    JTextArea displayCases;
+
     public RepairAgentMenu() {
-        JMenu repair_caseMenu = new JMenu ("Repair Case");
-        JMenuItem delete_repair_caseItem = new JMenuItem ("Delete Repair Case");
-        repair_caseMenu.add (delete_repair_caseItem);
-        JMenuItem update_repair_caseItem = new JMenuItem ("Update Repair Case");
-        repair_caseMenu.add (update_repair_caseItem);
-        JMenuItem create_repair_caseItem = new JMenuItem ("Create Repair Case");
-        repair_caseMenu.add (create_repair_caseItem);
+        JMenu repairCaseMenu = new JMenu ("Repair Case");
+         deleteRepairCase = new JMenuItem ("Delete Repair Case");
+        repairCaseMenu.add (deleteRepairCase);
+         updateRepairCase = new JMenuItem ("Update Repair Case");
+        repairCaseMenu.add (updateRepairCase);
+         createRepairCase = new JMenuItem ("Create Repair Case");
+        repairCaseMenu.add (createRepairCase);
+        viewRepairCases = new JMenuItem("View Repair Cases");
+        repairCaseMenu.add(viewRepairCases);
 
         topMenu = new JMenuBar();
-        topMenu.add (repair_caseMenu);
+        topMenu.add (repairCaseMenu);
+
+        createRepairCase.addActionListener(this);
+        updateRepairCase.addActionListener(this);
+        deleteRepairCase.addActionListener(this);
+        viewRepairCases.addActionListener(this);
+
+
+
+
 
         setPreferredSize (new Dimension (400, 500));
         setLayout (null);
@@ -36,6 +51,7 @@ public class RepairAgentMenu extends JPanel {
 
 
     public static void main (String[] args) {
+
         JFrame frame = new JFrame ("MyPanel");
         frame.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().add (new RepairAgentMenu());
@@ -44,6 +60,8 @@ public class RepairAgentMenu extends JPanel {
 
 
     }
+
+
 
     public static void createCase(ArrayList<RepairCase> allRepairCases, ArrayList<Customer> allCustomers){
 
@@ -79,4 +97,24 @@ public class RepairAgentMenu extends JPanel {
 
     }
 
+    public static void viewRepairCases(ArrayList<RepairCase> allRepairCases){
+
+    }
+
+    public void actionPerformed(ActionEvent e) {
+
+        if(e.getSource()==createRepairCase){
+            createCase(allRepairCases, allCustomers);
+        }
+        if(e.getSource()==updateRepairCase){
+            updateCase(allRepairCases);
+        }
+        if(e.getSource()==deleteRepairCase){
+            removeCase(allRepairCases);
+        }
+        if(e.getSource()==viewRepairCases){
+            viewRepairCases(allRepairCases);
+        }
+
+    }
 }
