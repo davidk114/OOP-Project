@@ -2,16 +2,19 @@ package RepairServiceSystem;
 
 public class RepairCase {
 
-    private int caseId = 0;
+   // private int caseId;
+    private int caseId;
+    private static int caseIdCounter = 0;
     private Customer customer;
     private String faultDesc;
     private String serialNo;
     private String deviceBrand;
     private String status;
 
-public RepairCase(int CaseID, Customer customer, String faultDesc,
+
+    public RepairCase( Customer customer, String faultDesc,
                   String serialNo, String deviceBrand, String status){
-    setCaseId(caseId);
+   setCaseId(caseId);
     setCustomer(customer);
     setFaultDesc(faultDesc);
     setSerialNo(serialNo);
@@ -20,7 +23,7 @@ public RepairCase(int CaseID, Customer customer, String faultDesc,
 }
 
 public RepairCase(){
-    setCaseId(0);
+   setCaseId(caseId);
     setCustomer(customer);
     setFaultDesc("n/a");
     setSerialNo("n/a");
@@ -28,9 +31,13 @@ public RepairCase(){
     setStatus("L");
 }
 
+
+
     public void setCaseId(int caseId) {
-        caseId += caseId;
+        this.caseId = caseIdCounter++;
+
     }
+
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
@@ -52,9 +59,6 @@ public RepairCase(){
         this.status = status;
     }
 
-    public int getCaseId() {
-        return caseId;
-    }
 
     public String getDeviceBrand() {
         return deviceBrand;
@@ -68,6 +72,10 @@ public RepairCase(){
         return customer;
     }
 
+    public int getCaseId() {
+    return this.caseId;
+    }
+
     public String getSerialNo() {
         return serialNo;
     }
@@ -76,10 +84,18 @@ public RepairCase(){
         return status;
     }
 
+
     public String toString(){
     return "RC" + getCaseId() + "\n" + getCustomer() + "\n" +
             "\nFault Description: " + getFaultDesc() + "\nDevice Type: " +
             getDeviceBrand() + "\nSerial Number: " + getSerialNo() + "\n\nStatus: " +
-            getStatus();
+            getStatus() + "\n\n";
     }
+
+    public String toStringJList(){
+    return "RC" + getCaseId() + "\t\t" + "       ||      " + customer.getName() + "\t\t         ||      " + getDeviceBrand() + "        \t\t\t||         " + getStatus();
+
+    }
+
+
 }

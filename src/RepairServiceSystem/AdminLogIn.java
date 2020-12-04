@@ -9,9 +9,10 @@ public class AdminLogIn {
 
     JTextField usernameField;
     JPasswordField passwordField;
+    JFrame jFrameWindow;
 
     public AdminLogIn(){
-        JFrame jFrameWindow = new JFrame("Authentication");
+        jFrameWindow = new JFrame("Authentication");
 
         FlowLayout flowLayout = new FlowLayout();
 
@@ -69,6 +70,10 @@ public class AdminLogIn {
                     JOptionPane.showMessageDialog(null, "Welcome to the system " +
                                     usernameField.getText(), "Authenticated",
                             JOptionPane.INFORMATION_MESSAGE);
+
+                    jFrameWindow.dispose();
+
+
                 }
                 else
                     JOptionPane.showMessageDialog(null,"Invalid username/password " +

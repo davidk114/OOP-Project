@@ -6,9 +6,9 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class Menu extends JFrame {
-private JButton raButton;
-private JButton cButton;
-private JButton aButton;
+private final JButton raButton;
+private final JButton cButton;
+private final JButton aButton;
 
 
         public Menu(){
@@ -56,8 +56,8 @@ private JButton aButton;
                 if(e.getSource() == raButton){
 
 
-                   LogIn login = new LogIn();
-
+                    LogIn login = new LogIn();
+                    RepairAgentMenu repairAgentMenu = new RepairAgentMenu();
 
                 }
                 else if(e.getSource() == cButton){
@@ -71,6 +71,7 @@ private JButton aButton;
 
 
             }
+
 
 
 

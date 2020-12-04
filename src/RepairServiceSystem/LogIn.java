@@ -9,9 +9,13 @@ public class LogIn {
 
     JTextField usernameField;
     JPasswordField passwordField;
+    JFrame jFrameWindow;
 
     public LogIn(){
-        JFrame jFrameWindow = new JFrame("Authentication");
+
+
+
+         jFrameWindow = new JFrame("Authentication");
 
         FlowLayout flowLayout = new FlowLayout();
 
@@ -71,7 +75,10 @@ public class LogIn {
                                     usernameField.getText(), "Authenticated",
                             JOptionPane.INFORMATION_MESSAGE);
 
-                    RepairAgentMenu repMenu = new RepairAgentMenu();
+                  //  new RepairAgentMenu().setVisible(true);
+                    RepairAgentMenu repairAgentMenu = new RepairAgentMenu();
+
+                    jFrameWindow.dispose();
 
                 }
                 else
