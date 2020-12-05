@@ -29,14 +29,14 @@ public class TestRepairCase {
         JOptionPane.showMessageDialog(null, "Repair Case" + r1.getCaseId() +
                 "\n\n" + r1.toString());
 
-        Service ramInstall = new Service("Ram Install", "Installs Ram", 30);
-        Service virusScan = new Service("Virus Scan", "Scan and remove viruses", 20);
+        //Service ramInstall = new Service("Ram Install", "Installs Ram", 30);
+        //Service virusScan = new Service("Virus Scan", "Scan and remove viruses", 20);
 
-        Service[] inv1 = new Service[2];
+        //Service[] inv1 = new Service[2];
 
-        Invoice invoice1 = new Invoice(1,c1, 0, inv1);
+        //Invoice invoice1 = new Invoice(1,c1, 0, inv1);
 
-        JOptionPane.showMessageDialog(null, invoice1.toString(), "Invoice" + invoice1.getInvNo(), JOptionPane.INFORMATION_MESSAGE);
+     //   JOptionPane.showMessageDialog(null, invoice1.toString(), "Invoice" + invoice1.getInvNo(), JOptionPane.INFORMATION_MESSAGE);
 
     }
 

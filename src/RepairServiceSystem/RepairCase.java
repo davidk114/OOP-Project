@@ -2,7 +2,6 @@ package RepairServiceSystem;
 
 public class RepairCase {
 
-   // private int caseId;
     private int caseId;
     private static int caseIdCounter = 0;
     private Customer customer;
@@ -28,7 +27,7 @@ public RepairCase(){
     setFaultDesc("n/a");
     setSerialNo("n/a");
     setDeviceBrand("n/a");
-    setStatus("L");
+    setStatus("Logged");
 }
 
 
